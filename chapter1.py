@@ -3,9 +3,16 @@ import numpy as np
 
 '''Show picture:
 # Open Picture file
-path_to_pic = "/Users/salavat/Pictures/monkey.jpg"
-img = cv2.imread(path_to_pic)
-cv2.imshow("Output", img)
+file = "Images/monkey.jpg"
+
+picture1 = cv2.imread(filename=file, flags=-1)  # cv2.IMREAD_UNCHANGED
+picture2 = cv2.imread(filename=file, flags=0)   # cv2.IMREAD_GRAYSCALE
+picture3 = cv2.imread(filename=file, flags=1)   # cv2.IMREAD_COLOR:
+
+cv2.imshow("Original -1", picture1)
+cv2.imshow("Original 0", picture2)
+cv2.imshow("Original 1", picture3)
+
 # 0 - always, 1000 = 1 second
 cv2.waitKey(0)
 '''
